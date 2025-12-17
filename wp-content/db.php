@@ -1,0 +1,1 @@
+/Users/shin/website/shinichiroOno/wp-content/plugins/query-monitor/wp-content/db.php

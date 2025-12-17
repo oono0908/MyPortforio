@@ -1,0 +1,15 @@
+
+// spでは非表示
+.md-none{
+  @include mq("md"){
+    display: none !important;
+  }
+}
+
+// pcで表示
+.md-show{
+  display: none !important;
+  @include mq("md"){
+    display: block !important;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "myportfolio-theme",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build && rm -f assets/css/*.js assets/css/*.js.map"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0",
+    "sharp": "^0.34.5",
+    "vite": "^5.0.0",
+    "vite-plugin-static-copy": "^3.1.4"
+  }
+}

@@ -1,0 +1,51 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $base-font;
+  box-sizing: border-box;
+}
+
+
+// PCでは電話番号のクリックを無効にする
+a[href^="tel:"] {
+  pointer-events: none;
+  @include mq("md") {
+    pointer-events: auto;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+// フォーカススタイル
+// マウス操作時はoutlineを非表示にする
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+// キーボード操作時（Tab移動など）のみフォーカス表示
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid $purple;
+  outline-offset: 2px;
+}

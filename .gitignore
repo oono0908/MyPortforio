@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+
+# Build files
+dist/
+
+# Vite build output (WordPress theme)
+wp-content/themes/MyPortforio/assets/
+wp-content/themes/MyPortforio/node_modules/
+wp-content/themes/MyPortforio/package-lock.json
+
+# Source maps
+*.map
+
+# Sass cache
+.sass-cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
