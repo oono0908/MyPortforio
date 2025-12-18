@@ -1,9 +1,9 @@
 /* ===================================
    Top Page Styles
    =================================== */
-@import '../abstracts/variables';
-@import '../abstracts/mixins';
-@import '../abstracts/responsive';
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/responsive";
 
 // Top page specific styles
 .mv {
@@ -20,20 +20,96 @@
   color: $black;
   text-align: center;
   letter-spacing: 0.1em;
-  @include mq("md"){
+  @include mq("md") {
     font-size: 30px;
   }
 }
 
-.txt-rotate > .wrap { 
+.txt-rotate > .wrap {
   border-right: 0.08em solid #666;
   animation: blink 0.4s step-end infinite;
 }
 
 @keyframes blink {
-  0%, 50% { border-color: #666; }
-  51%, 100% { border-color: transparent; }
+  0%,
+  50% {
+    border-color: #666;
+  }
+  51%,
+  100% {
+    border-color: transparent;
+  }
 }
 
+// Works Section
+.works {
+  padding: 80px 0;
+}
 
+.works__container {
+  // max-width: 1200px;
+  margin: 0 auto;
+}
 
+.works__title {
+  font-size: 36px;
+  font-weight: $regular;
+  text-align: center;
+  margin-bottom: 60px;
+  color: $black;
+  letter-spacing: 0.1em;
+}
+
+.swiper {
+  width: 100%;
+  padding: 20px 0 60px;
+}
+
+.swiper-slide {
+  transition-timing-function: linear;
+}
+
+.works__item {
+  width: 200px;
+  aspect-ratio: 361 / 650;
+  position: relative;
+  border-radius: 8px;
+  border: 2px solid $black;
+  @include mq("md") {
+    width: 230px;
+  }
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.work__item-cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0;
+    }
+  }
+}
+
+.works__item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

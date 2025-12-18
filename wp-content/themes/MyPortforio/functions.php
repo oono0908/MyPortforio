@@ -19,8 +19,10 @@ function myportfolio_enqueue_assets() {
 
     // ページ別CSS・JS読み込み
     if ( is_front_page() ) {
-        wp_enqueue_script( 'common-js', get_theme_file_uri('assets/js/common/script.js'), ['jquery'], '1.0', true, ['defer' => true] );
-        wp_enqueue_script( 'top-js', get_theme_file_uri('assets/js/top/script.js'), ['jquery'], '1.0', true, ['defer' => true] );
+        wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', [], null );
+        wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], null, true );
+        wp_enqueue_script( 'common-js', get_theme_file_uri('assets/js/common/script.js'), ['jquery'], '1.0', true );
+        wp_enqueue_script( 'top-js', get_theme_file_uri('assets/js/top/script.js'), ['jquery', 'swiper-js'], '1.0', true );
         wp_enqueue_style( 'top-css', get_theme_file_uri('assets/css/top/style.css'), [], '1.0' );
     }
     elseif ( is_page('about') ) {
