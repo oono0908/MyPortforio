@@ -25,6 +25,9 @@ function myportfolio_enqueue_assets() {
             : '1.0.0'
     );
 
+  wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Poppins&family=Viga&display=swap', [], null );
+
+
     // ページ別CSS・JS読み込み
     if ( is_front_page() ) {
         wp_enqueue_script( 'common-js', get_theme_file_uri('assets/js/common/script.js'), ['jquery'], '1.0', true, ['defer' => true] );
