@@ -44,6 +44,55 @@
         </div>
       </div>
     </div>
+    <div class="works__button">
+      <a href="<?php echo home_url('/works'); ?>" class="works__button-link" aria-label="作品一覧へ移動">
+      </a>
+    </div>
+    <span
+        class="txt-rotate works__button-text"
+        data-period="1000"
+        data-rotate='[ "View ALL" ]'>
+   </span>
+  </section>
+
+  <!-- blog -->
+  <section class="blog">
+    <div class="blog__container">
+      <h2 class="blog__title">Blog</h2>
+      <ul class="blog__list">
+        <?php
+        $args = array(
+          'post_type' => 'blog',
+          'posts_per_page' => 9,
+        );
+        $blog_query = new WP_Query($args);
+        while ($blog_query->have_posts()) : $blog_query->the_post();
+          $image = get_field('image');
+        ?>
+          <li class="blog__item">
+            <div class="blog__item-inner">
+              <a href="<?php $blog_query->the_permalink(); ?>" class="blog__item-link" aria-label="<?php the_title(); ?>へ移動">
+                <div class="blog__item-image">
+                  <?php if ($image) : ?>
+                    <img src="<?php echo esc_url($image); ?>" class="blog__item-image" alt="<?php the_title(); ?>">
+                  <?php endif; ?>
+                </div>
+              </a>
+            </div>
+            <div class="blog__item-title"><?php the_title(); ?></div>
+          </li>
+        <?php endwhile; wp_reset_postdata(); ?>
+      </ul>
+    </div>
+    <div class="blog__button">
+      <a href="<?php echo home_url('/blog'); ?>" class="blog__button-link" aria-label="ブログ一覧へ移動">
+      </a>
+    </div>
+    <span
+        class="txt-rotate blog__button-text"
+        data-period="1000"
+        data-rotate='[ "View ALL" ]'>
+   </span>
   </section>
 
 </main>
