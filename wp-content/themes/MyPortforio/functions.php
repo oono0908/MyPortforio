@@ -12,27 +12,16 @@ add_action('after_setup_theme', 'myportfolio_theme_support');
 
 // アセット読み込み
 function myportfolio_enqueue_assets() {
-    $theme_uri = get_template_directory_uri();
-    $theme_path = get_template_directory();
-
     // 共通CSS読み込み（全ページ）
-    wp_enqueue_style(
-        'myportfolio-styles',
-        $theme_uri . '/assets/css/common/style.css',
-        array(),
-        file_exists($theme_path . '/assets/css/common/style.css')
-            ? filemtime($theme_path . '/assets/css/common/style.css')
-            : '1.0.0'
-    );
-
-  wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Poppins&family=Viga&display=swap', [], null );
+    wp_enqueue_style( 'common-css', get_theme_file_uri('assets/css/common/style.css'), [], '1.0' );
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Poppins&family=Viga&display=swap', [], null );
 
 
     // ページ別CSS・JS読み込み
     if ( is_front_page() ) {
         wp_enqueue_script( 'common-js', get_theme_file_uri('assets/js/common/script.js'), ['jquery'], '1.0', true, ['defer' => true] );
-        wp_enqueue_style( 'top-css', get_theme_file_uri('assets/css/top/style.css'), [], '1.0' );
         wp_enqueue_script( 'top-js', get_theme_file_uri('assets/js/top/script.js'), ['jquery'], '1.0', true, ['defer' => true] );
+        wp_enqueue_style( 'top-css', get_theme_file_uri('assets/css/top/style.css'), [], '1.0' );
     }
     elseif ( is_page('about') ) {
         wp_enqueue_style( 'about-css', get_theme_file_uri('assets/css/about/style.css'), [], '1.0' );

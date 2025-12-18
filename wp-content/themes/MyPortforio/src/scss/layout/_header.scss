@@ -9,6 +9,10 @@
   height: 100px;
   padding: 0 20px;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $header;
   @include mq("md"){
     display: block;
     flex-direction: column;
