@@ -33,7 +33,6 @@
   <!-- ファビコン -->
   <link rel="icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/favicon.ico'); ?>">
   <link rel="apple-touch-icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/apple-touch-icon.png'); ?>">
-
   <?php wp_head(); ?>
 </head>
 
@@ -49,17 +48,27 @@
     <div class="header__right">
       <div class="header__btns">
         <div class="header__btn">
-          <a class="header__link" href="<?php echo esc_url(home_url('/works')); ?>" aria-label="作品一覧へ移動">WORKS</a>
+          <a class="header__link" href="<?php echo esc_url(home_url('/works')); ?>" aria-label="作品一覧へ移動">
+            <p class="header__btn-text" data-chaffle="en">WORKS</p>
+          </a>
         </div>
         <div class="header__btn">
-          <a class="header__link" href="<?php echo esc_url(home_url('/about')); ?>" aria-label="自己紹介へ移動">ABOUT</a>
+          <a class="header__link" href="<?php echo esc_url(home_url('/about')); ?>" aria-label="自己紹介へ移動">
+            <p class="header__btn-text" data-chaffle="en">ABOUT</p>
+          </a>
         </div>
         <div class="header__btn">
-          <a class="header__link" href="<?php echo esc_url(home_url('/blog')); ?>" aria-label="ブログへ移動">BLOG</a>
+          <a class="header__link" href="<?php echo esc_url(home_url('/blog')); ?>" aria-label="ブログへ移動">
+            <p class="header__btn-text" data-chaffle="en">BLOG</p>
+          </a>
         </div>
         <div class="header__btn">
-          <a class="header__link" href="<?php echo esc_url(home_url('/contact')); ?>" aria-label="お問い合わせへ移動">CONTACT</a>
+          <a class="header__link" href="<?php echo esc_url(home_url('/contact')); ?>" aria-label="お問い合わせへ移動">
+            <p class="header__btn-text" data-chaffle="en">CONTACT</p>
+          </a>
         </div>
       </div>
     </div>
   </header>
+
+  

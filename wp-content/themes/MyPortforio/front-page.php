@@ -94,6 +94,13 @@
         data-rotate='[ "View ALL" ]'>
    </span>
   </section>
+  <section class="contact">
+    <div class="contact__container">
+      <a href="<?php echo home_url('/contact'); ?>" class="contact__link" aria-label="お問い合わせへ移動">
+        <div class="contact__title">Contact Me</div>
+      </a>
+    </div>
+  </section>
 
 </main>
 

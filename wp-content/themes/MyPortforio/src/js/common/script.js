@@ -1,4 +1,12 @@
-jQuery(function ($) {
-  // ドキュメント読み込み完了時の処理
-  console.log("Common ミャンミャン loaded");
+import Chaffle from 'chaffle';
+
+// Chaffle.jsの初期化（ヘッダーナビゲーション）
+jQuery(function($) {
+  $('[data-chaffle]').each(function() {
+    const chaffle = new Chaffle(this, { /* options */ });
+
+    $(this).on('mouseover', function() {
+      chaffle.init();
+    });
+  });
 });

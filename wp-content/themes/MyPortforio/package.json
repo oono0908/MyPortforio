@@ -11,5 +11,8 @@
     "sharp": "^0.34.5",
     "vite": "^5.0.0",
     "vite-plugin-static-copy": "^3.1.4"
+  },
+  "dependencies": {
+    "chaffle": "^2.1.0"
   }
 }

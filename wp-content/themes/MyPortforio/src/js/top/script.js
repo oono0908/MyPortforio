@@ -79,3 +79,99 @@ jQuery(document).ready(function ($) {
     "<style>.txt-rotate > .wrap { border-right: 0.08em solid #666 }</style>"
   ).appendTo("head");
 });
+
+jQuery(document).ready(function ($) {
+  $(".blog__item-inner")
+    .stop(true, false)
+    .hover(
+      function (e) {
+        $(this).stop(true, false).addClass("is-bouncing");
+      },
+      function (e) {
+        setTimeout(() => {
+          $(this).stop(true, false).removeClass("is-bouncing");
+        }, 500);
+      }
+    );
+});
+
+jQuery(document).ready(function ($) {
+  let worksItem = $(".works__item");
+  let worksItemCover = $(".work__item-cover");
+  worksItem.hover(
+    function (e) {
+      $(this).find(worksItemCover).stop(true, false).addClass("is-slideUp");
+    },
+    function (e) {
+      setTimeout(() => {
+        $(this)
+          .find(worksItemCover)
+          .stop(true, false)
+          .removeClass("is-slideUp");
+      }, 300);
+    }
+  );
+});
+
+jQuery(function($) {
+  let noiseInterval;
+  
+  $('.contact__link').hover(
+    function() {
+      const $container = $(this).closest('.contact__container');
+      const $title = $(this).find('.contact__title');
+      
+      // ホバー時にborder-radiusを0に
+      $container.css('border-radius', '0');
+      
+      // ノイズアニメーション開始
+      noiseInterval = setInterval(function() {
+        // ランダムなborder-width (1-3px)
+        const borderTop = Math.floor(Math.random() * 3) + 1;
+        const borderRight = Math.floor(Math.random() * 3) + 1;
+        const borderBottom = Math.floor(Math.random() * 3) + 1;
+        const borderLeft = Math.floor(Math.random() * 3) + 1;
+        
+        // ランダムな位置移動 (-2px ~ 2px)
+        const containerX = (Math.random() * 4 - 2).toFixed(1);
+        const containerY = (Math.random() * 4 - 2).toFixed(1);
+        
+        // コンテナのノイズ適用
+        $container.css({
+          'border-width': borderTop + 'px ' + borderRight + 'px ' + borderBottom + 'px ' + borderLeft + 'px',
+          'transform': 'translate(' + containerX + 'px, ' + containerY + 'px)'
+        });
+        
+        // テキストのランダムな動き
+        const textX = (Math.random() * 4 - 2).toFixed(1);
+        const textY = (Math.random() * 4 - 2).toFixed(1);
+        const skew = (Math.random() * 4 - 2).toFixed(1);
+        
+        $title.css({
+          'transform': 'translate(' + textX + 'px, ' + textY + 'px) skew(' + skew + 'deg)'
+        });
+        
+      }, 50);
+      
+      $container.data('noiseInterval', noiseInterval);
+    },
+    function() {
+      const $container = $(this).closest('.contact__container');
+      const $title = $(this).find('.contact__title');
+      
+      // インターバルをクリア
+      clearInterval($container.data('noiseInterval'));
+      
+      // 元の状態に戻す
+      $container.css({
+        'border-width': '2px',
+        'border-radius': '8px',
+        'transform': 'translate(0, 0)'
+      });
+      
+      $title.css({
+        'transform': 'translate(0, 0) skew(0deg)'
+      });
+    }
+  );
+});
