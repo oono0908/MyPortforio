@@ -10,7 +10,7 @@ jQuery(function ($) {
     // 画面幅によって変化量を調整
     var changeRate;
     // 文字サイズを30vwから200vwまで変化させる
-    var minSize
+    var minSize;
     var maxSize = 1000;
     if (windowWidth <= 768) {
       // スマホの場合：変化量を大きく
@@ -22,16 +22,13 @@ jQuery(function ($) {
       minSize = 7;
     }
 
-
     var fontSize = minSize + (maxSize - minSize) * scrollPercent * changeRate;
 
     // font-sizeを更新（最大値を制限）
     fontSize = Math.min(fontSize, maxSize);
-    $(".about__title").css("font-size", fontSize + "vw");
-
+    $(".works__title").css("font-size", fontSize + "vw");
   });
 
   // 初期状態で一度実行
   $(window).trigger("scroll");
 });
-

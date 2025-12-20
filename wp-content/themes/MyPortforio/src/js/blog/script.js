@@ -27,7 +27,7 @@ jQuery(function ($) {
 
     // font-sizeを更新（最大値を制限）
     fontSize = Math.min(fontSize, maxSize);
-    $(".about__title").css("font-size", fontSize + "vw");
+    $(".blog__title").css("font-size", fontSize + "vw");
 
   });
 

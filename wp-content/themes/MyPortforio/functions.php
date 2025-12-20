@@ -31,6 +31,17 @@ function myportfolio_enqueue_assets() {
         wp_enqueue_style( 'about-css', get_theme_file_uri('assets/css/about/style.css'), [], '1.0' );
         wp_enqueue_script( 'about-js', get_theme_file_uri('assets/js/about/script.js'), ['jquery', 'common-js'], '1.0', true );
     }
+    elseif ( is_archive('blog') ) {
+        wp_enqueue_style( 'blog-css', get_theme_file_uri('assets/css/blog/style.css'), [], '1.0' );
+        wp_enqueue_script( 'blog-js', get_theme_file_uri('assets/js/blog/script.js'), ['jquery', 'common-js'], '1.0', true );
+    }
+    elseif ( is_singular('blog') ) {
+        wp_enqueue_style( 'blog-single-css', get_theme_file_uri('assets/css/blog/single.css'), [], '1.0' );
+    }
+    elseif ( is_archive('works') ) {
+        wp_enqueue_style( 'works-css', get_theme_file_uri('assets/css/works/style.css'), [], '1.0' );
+        wp_enqueue_script( 'works-js', get_theme_file_uri('assets/js/works/script.js'), ['jquery', 'common-js'], '1.0', true );
+    }
     elseif ( is_page('contact') ) {
         wp_enqueue_style( 'contact-css', get_theme_file_uri('assets/css/contact/style.css'), [], '1.0' );
     }
