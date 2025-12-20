@@ -7,7 +7,6 @@ body {
   box-sizing: border-box;
 }
 
-
 // PCでは電話番号のクリックを無効にする
 a[href^="tel:"] {
   pointer-events: none;

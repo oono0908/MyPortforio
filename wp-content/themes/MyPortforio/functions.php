@@ -29,6 +29,7 @@ function myportfolio_enqueue_assets() {
     }
     elseif ( is_page('about') ) {
         wp_enqueue_style( 'about-css', get_theme_file_uri('assets/css/about/style.css'), [], '1.0' );
+        wp_enqueue_script( 'about-js', get_theme_file_uri('assets/js/about/script.js'), ['jquery', 'common-js'], '1.0', true );
     }
     elseif ( is_page('contact') ) {
         wp_enqueue_style( 'contact-css', get_theme_file_uri('assets/css/contact/style.css'), [], '1.0' );

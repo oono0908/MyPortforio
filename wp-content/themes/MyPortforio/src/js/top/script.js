@@ -113,6 +113,7 @@ jQuery(document).ready(function ($) {
   );
 });
 
+
 jQuery(function($) {
   let noiseInterval;
   

@@ -101,12 +101,13 @@
 }
 
 .header__btn{
-  width: 100px;
+  width: 140px;
   height: 100%;
   @include mq("md"){
     width: 100%;
   }
 }
+
 
 .header__btn-text{
   font-size: 20px;

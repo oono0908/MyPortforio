@@ -13,12 +13,12 @@
 }
 
 .about__title {
-  background-image: url(../../images/about/shinichiro2.webp);
+  background-image: url(../../images/about/shinichiro.webp);
   background-clip: text;
   -webkit-background-clip: text;
   background-attachment: fixed;
   color: transparent;
-  font-weight: $regular;
+  font-weight: bold;
   line-height: 1.2;
   width: 100vw;
   height: 100vh;
@@ -39,8 +39,7 @@
 .about__top {
   height: 150vh;
   width: 100vw;
-  background: white;
-  opacity: 0.8;
+  background-color: white;
   overflow: hidden;
   position: relative;
 }
