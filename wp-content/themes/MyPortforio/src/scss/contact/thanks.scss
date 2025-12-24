@@ -1,0 +1,40 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/responsive";
+
+/* ===================================
+   Thanks Page Styles
+   =================================== */
+   body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+   }
+
+   main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .thanks {
+    padding: 80px 0;
+    height: inherit;
+   }
+
+   .thanks__container {
+    height: inherit;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+   }
+
+   .thanks__title {
+    height: inherit;
+    font-size: 36px;
+    font-weight: $regular;
+    color: $black;
+    letter-spacing: 0.1em;
+   }

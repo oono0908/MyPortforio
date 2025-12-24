@@ -1,8 +1,200 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/responsive";
+
 /* ===================================
    Contact Page Styles
    =================================== */
 
-// Contact page specific styles
-.site-main{
-  background-color: blue;
+   .contact__container {
+    width: 100%;
+    position: relative;
+  }
+  
+  .contact__title {
+    background-image: url(../../images/about/shinichiro5.webp);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-attachment: fixed;
+    color: transparent;
+    font-weight: $regular;
+    line-height: 1.2;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /*画像の位置を決める*/
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .contact__top {
+    height: 150vh;
+    width: 100vw;
+    background: white;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .contact__main {
+    background-color: white;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .contact__main-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 35px;
+    @include mq(md) {
+      padding: 60px 15px;
+    }
+  }
+
+/* ===================================
+   Contact Form Styles
+   =================================== */
+
+.contact-form {
+  width: 100%;
+
+  &__field {
+    margin-bottom: 30px;
+
+    @include mq(md) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 16px;
+    font-weight: $medium;
+    margin-bottom: 8px;
+
+    @include mq(md) {
+      font-size: 14px;
+    }
+  }
+
+  &__required {
+    color: #e74c3c;
+    margin-left: 4px;
+    font-weight: $bold;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    background-color: #ffffff;
+    border: 2px solid black;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #999999;
+    }
+
+    // エラー状態
+    &.is-error {
+      border-color: #e74c3c;
+
+      &:focus {
+        border-color: #e74c3c;
+        box-shadow: 0 0 0 3px rgba(#e74c3c, 0.1);
+      }
+    }
+
+    @include mq(md) {
+      font-size: 16px; // iOS Safari のズーム防止のため16px以上を維持
+      padding: 10px 14px;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 150px;
+    font-family: inherit;
+    line-height: 1.6;
+  }
+
+  &__error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 6px;
+    min-height: 20px;
+    line-height: 1.4;
+
+    @include mq(md) {
+      font-size: 13px;
+    }
+
+    // エラーメッセージが空の時は非表示
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__submit-wrapper {
+    text-align: center;
+    margin-top: 40px;
+
+    @include mq(md) {
+      margin-top: 30px;
+    }
+  }
+
+  &__submit {
+    display: inline-block;
+    padding: 16px 60px;
+    font-size: 16px;
+    font-weight: $bold;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    // 非活性状態
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    @include mq(md) {
+      font-size: 16px;
+      padding: 14px 50px;
+    }
+  }
 }

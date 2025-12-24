@@ -6,58 +6,174 @@
    Works Page Styles
    =================================== */
 
-   .works__container {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+.works__container {
+  width: 100%;
+  position: relative;
+}
+
+.works__title {
+  background-image: url(../../images/about/shinichiro4.webp);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-attachment: fixed;
+  color: transparent;
+  font-weight: $regular;
+  line-height: 1.2;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /*画像の位置を決める*/
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.works__top {
+  height: 150vh;
+  width: 100vw;
+  background: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.works__main {
+  background-color: white;
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+}
+
+.works__main-inner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+  @include mq(md) {
+    padding: 30px 15px;
   }
-  
-  .works__title {
-    background-image: url(../../images/about/shinichiro1.webp);
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-attachment: fixed;
-    color: transparent;
-    font-weight: $regular;
-    line-height: 1.2;
-    width: 100vw;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; /*画像の位置を決める*/
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    position: fixed;
+}
+
+.works__items {
+  display: flex;
+  gap:150px;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 50px 200px;
+  @include mq(md) {
+    padding: 50px 100px;
+    gap: 100px;
+  }
+  @include mq(lg) {
+    gap: 150px;
+  }
+}
+
+.works__items-title {
+  font-size: 8vw;
+  font-weight: $regular;
+  color: $black;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  position: absolute;
+  z-index: 1;
+  top: 5%;
+  left: 15%;
+  padding: 10px;
+  border-radius: 10px;
+  @include mq(md) {
+    font-size: 10vw;
+    top:5%;
+    left: 5%;
+  }
+}
+
+.works__item {
+  position: relative;
+  z-index: 1;
+  width: 40vw;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  border: 2px solid $black;
+  border-radius: 10px;
+  @include mq(md) {
+    width: 80vw;
+  }
+  @include mq(lg) {
+    width: 60vw;
+  }
+}
+
+.works__item-dammy {
+  opacity: 0;
+  @include mq(md) {
+    display: none;
+  }
+  @include mq(lg) {
+    display: none;
+  }
+}
+
+.works__item-image-wrapper {
+  width: 100%;
+  height: 100%;
+  &::after {
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    transition: all 0.3s ease;
   }
-  
-  .works__top {
-    height: 150vh;
-    width: 100vw;
-    background: white;
-    opacity: 0.8;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .works__main {
-    background-color: white;
-    position: relative;
-    z-index: 2;
-    background-color: white;
-  }
-  
-  .works__main-inner {
-    padding: 100px 35px;
-    max-width: 1400px;
-    margin: 0 auto;
-    @include mq(md) {
-      padding: 60px 15px;
-      width: 100%;
+  @media (hover: hover) {
+    &:hover {
+      &::after {
+        opacity: 0;
+      }
+      & .works__item-title {
+        top: 100%;
+        left: 100%;
+        transform: translate(-100%, 0);
+      }
     }
   }
+}
+
+.works__item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.works__item-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 28px;
+  font-weight: $regular;
+  letter-spacing: 0.1em;
+  z-index: 3;
+  transition: transform 0.3s ease;
+  width: fit-content;
+  white-space: nowrap;
+  width: fit-content;
+  @include mq(md) {
+    font-size: 18px;
+  }
+}
+
+

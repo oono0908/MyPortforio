@@ -28,10 +28,13 @@ export default defineConfig({
         "css/common/style": resolve(__dirname, "src/scss/common/style.scss"),
         "css/about/style": resolve(__dirname, "src/scss/about/style.scss"),
         "css/blog/style": resolve(__dirname, "src/scss/blog/style.scss"),
+        "css/blog/single": resolve(__dirname, "src/scss/blog/single.scss"),
         "css/contact/style": resolve(__dirname, "src/scss/contact/style.scss"),
         "css/top/style": resolve(__dirname, "src/scss/top/style.scss"),
-        "css/blog/single": resolve(__dirname, "src/scss/blog/single.scss"),
         "css/works/style": resolve(__dirname, "src/scss/works/style.scss"),
+        "css/works/single": resolve(__dirname, "src/scss/works/single.scss"),
+        "css/blog/category": resolve(__dirname, "src/scss/blog/category.scss"),
+        "css/contact/thanks": resolve(__dirname, "src/scss/contact/thanks.scss"),
       },
       output: {
         entryFileNames: (chunkInfo) => {

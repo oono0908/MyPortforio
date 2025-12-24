@@ -30,16 +30,18 @@
           while ($works_query->have_posts()) : $works_query->the_post();
             $image = get_field('image');
           ?>
-            <div class="swiper-slide">
-              <div class="works__item">
-                <div class="work__item-cover">
-                  <div class="work__item-title"><?php the_title(); ?></div>
-                </div>
-                <?php if ($image) : ?>
-                  <img class="works__item-image" src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>">
-                <?php endif; ?>
-              </div>
-            </div>
+            <ul class="swiper-slide">
+              <li class="works__item">
+                <a href="<?php the_permalink(); ?>" class="works__item-link">
+                  <div class="work__item-cover">
+                    <div class="work__item-title"><?php the_title(); ?></div>
+                  </div>
+                    <?php if ($image) : ?>
+                      <img class="works__item-image" src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>">
+                    <?php endif; ?>
+                </a>
+              </li>
+            </ul>
           <?php endwhile; wp_reset_postdata(); ?>
         </div>
       </div>
@@ -70,15 +72,15 @@
           $image = get_field('image');
         ?>
           <li class="blog__item">
-            <div class="blog__item-inner">
-              <a href="<?php $blog_query->the_permalink(); ?>" class="blog__item-link" aria-label="<?php the_title(); ?>へ移動">
-                <div class="blog__item-image">
-                  <?php if ($image) : ?>
-                    <img src="<?php echo esc_url($image); ?>" class="blog__item-image" alt="<?php the_title(); ?>">
-                  <?php endif; ?>
-                </div>
-              </a>
-            </div>
+            <a href="<?php the_permalink(); ?>" class="blog__item-link" aria-label="<?php the_title(); ?>へ移動">
+              <div class="blog__item-inner">
+                  <div class="blog__item-image">
+                    <?php if ($image) : ?>
+                      <img src="<?php echo esc_url($image); ?>" class="blog__item-image" alt="<?php the_title(); ?>">
+                    <?php endif; ?>
+                  </div>
+              </div>
+            </a>
             <div class="blog__item-title"><?php the_title(); ?></div>
           </li>
         <?php endwhile; wp_reset_postdata(); ?>

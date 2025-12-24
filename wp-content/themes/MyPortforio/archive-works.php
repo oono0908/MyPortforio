@@ -9,17 +9,22 @@
       <div class="works__main">
         <div class="works__main-inner">
           <ul class="works__items">
+          <div class="works__items-title">
+              My Portfolio<br>Works
+            </div>
+            <li class="works__item works__item-dammy">
+            </li>
             <?php if (have_posts()) : ?>
               <?php while (have_posts()) : the_post(); ?>
                 <li class="works__item">
-                  <a href="<?php the_permalink(); ?>">  
+                  <a class="works__item-link" href="<?php the_permalink(); ?>">  
                     <div class="works__item-image-wrapper">
                       <img class="works__item-image" src="<?php echo esc_url(get_field('image')); ?>" alt="<?php the_title(); ?>">
+                      <div class="works__item-title">
+                      <?php the_title();?>
+                    </div>
                     </div>
                   </a>
-                  <div class="works__item-title">
-                    <?php the_title(); ?>
-                  </div>
                 </li>
               <?php endwhile; ?>
             <?php endif; ?>
