@@ -176,6 +176,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 80px;
+  align-items: flex-start;
   @include mq("md") {
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
@@ -324,6 +325,10 @@
       }
     }
   }
+  @include mq("md") {
+    width: 300px;
+    height: 150px;
+  }
 }
 
 .contact__link {
@@ -344,4 +349,7 @@
   text-align: center;
   color: $black;
   letter-spacing: 0.1em;
+  @include mq("md") {
+    font-size: 24px;
+  }
 }
