@@ -24,6 +24,7 @@ export default defineConfig({
         "js/contact/script": resolve(__dirname, "src/js/contact/script.js"),
         "js/top/script": resolve(__dirname, "src/js/top/script.js"),
         "js/works/script": resolve(__dirname, "src/js/works/script.js"),
+        "js/modules/scroll-title-animation": resolve(__dirname, "src/js/modules/scroll-title-animation.js"),
         // CSS files
         "css/common/style": resolve(__dirname, "src/scss/common/style.scss"),
         "css/about/style": resolve(__dirname, "src/scss/about/style.scss"),

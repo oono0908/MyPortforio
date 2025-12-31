@@ -27,6 +27,7 @@ function myportfolio_enqueue_assets() {
 
     // 共通JS読み込み（chaffleはViteでバンドル済み）
     wp_enqueue_script( 'common-js', get_theme_file_uri('assets/js/common/script.js'), ['jquery'], '1.0', true );
+    wp_enqueue_script( 'scroll-title-animation', get_theme_file_uri('assets/js/modules/scroll-title-animation.js'), ['jquery'], '1.0', true );
 
     // ページ別CSS・JS読み込み
     if ( is_front_page() ) {
@@ -54,21 +55,21 @@ function myportfolio_enqueue_assets() {
     elseif ( is_post_type_archive('blog') ) {
         // blogアーカイブページ
         wp_enqueue_style( 'blog-css', get_theme_file_uri('assets/css/blog/style.css'), [], '1.0' );
-        wp_enqueue_script( 'blog-js', get_theme_file_uri('assets/js/blog/script.js'), ['jquery', 'common-js'], '1.0', true );
+        wp_enqueue_script( 'blog-js', get_theme_file_uri('assets/js/blog/script.js'), ['jquery', 'common-js', 'scroll-title-animation'], '1.0', true );
     }
     elseif ( is_post_type_archive('works') ) {
         // worksアーカイブページ
         wp_enqueue_style( 'works-css', get_theme_file_uri('assets/css/works/style.css'), [], '1.0' );
-        wp_enqueue_script( 'works-js', get_theme_file_uri('assets/js/works/script.js'), ['jquery', 'gsap-js', 'gsap-scrolltrigger', 'common-js'], '1.0', true );
+        wp_enqueue_script( 'works-js', get_theme_file_uri('assets/js/works/script.js'), ['jquery', 'gsap-js', 'gsap-scrolltrigger', 'common-js', 'scroll-title-animation'], '1.0', true );
     }
     // 固定ページ
     elseif ( is_page('about') ) {
         wp_enqueue_style( 'about-css', get_theme_file_uri('assets/css/about/style.css'), [], '1.0' );
-        wp_enqueue_script( 'about-js', get_theme_file_uri('assets/js/about/script.js'), ['jquery', 'common-js'], '1.0', true );
+        wp_enqueue_script( 'about-js', get_theme_file_uri('assets/js/about/script.js'), ['jquery', 'common-js', 'scroll-title-animation'], '1.0', true );
     }
     elseif ( is_page('contact') ) {
         wp_enqueue_style( 'contact-css', get_theme_file_uri('assets/css/contact/style.css'), [], '1.0' );
-        wp_enqueue_script( 'contact-js', get_theme_file_uri('assets/js/contact/script.js'), ['jquery', 'common-js'], '1.0', true );
+        wp_enqueue_script( 'contact-js', get_theme_file_uri('assets/js/contact/script.js'), ['jquery', 'common-js', 'scroll-title-animation'], '1.0', true );
     }
     elseif ( is_page('thanks') ) {
         wp_enqueue_style( 'thanks-css', get_theme_file_uri('assets/css/contact/thanks.css'), [], '1.0' );
