@@ -1,5 +1,6 @@
 jQuery(function ($) {
-  const swiper = new Swiper(".js-swiper", {
+  const $swiper = $(".js-swiper");
+  const swiper = new Swiper($swiper[0], {
     loop: true, // ループを有効にする
     speed: 6000, // アニメーション速度（ミリ秒）
     allowTouchMove: false, // タッチ操作を無効にする（任意）
@@ -20,7 +21,7 @@ jQuery(function ($) {
 });
 
 jQuery(document).ready(function ($) {
-  var TxtRotate = function (el, toRotate, period) {
+  const TxtRotate = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
@@ -31,8 +32,8 @@ jQuery(document).ready(function ($) {
   };
 
   TxtRotate.prototype.tick = function () {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
+    const i = this.loopNum % this.toRotate.length;
+    const fullTxt = this.toRotate[i];
 
     if (this.isDeleting) {
       this.txt = fullTxt.substring(0, this.txt.length - 1);
@@ -42,8 +43,8 @@ jQuery(document).ready(function ($) {
 
     $(this.el).html('<span class="wrap">' + this.txt + "</span>");
 
-    var that = this;
-    var delta = 100 - Math.random() * 30;
+    const that = this;
+    let delta = 100 - Math.random() * 30;
 
     if (this.isDeleting) {
       delta /= 2;
@@ -65,9 +66,9 @@ jQuery(document).ready(function ($) {
 
   // 初期化
   $(".js-txt-rotate").each(function () {
-    var $this = $(this);
-    var toRotate = $this.attr("data-rotate");
-    var period = $this.attr("data-period");
+    const $this = $(this);
+    const toRotate = $this.attr("data-rotate");
+    const period = $this.attr("data-period");
 
     if (toRotate) {
       new TxtRotate(this, JSON.parse(toRotate), period);
@@ -96,16 +97,17 @@ jQuery(document).ready(function ($) {
 });
 
 jQuery(document).ready(function ($) {
-  let worksItem = $(".js-works-item-hover");
-  let worksItemCover = $(".js-works-item-cover");
-  worksItem.hover(
+  const $worksItem = $(".js-works-item-hover");
+  const $worksItemCover = $(".js-works-item-cover");
+
+  $worksItem.hover(
     function (e) {
-      $(this).find(worksItemCover).stop(true, false).addClass("is-slideUp");
+      $(this).find($worksItemCover).stop(true, false).addClass("is-slideUp");
     },
     function (e) {
       setTimeout(() => {
         $(this)
-          .find(worksItemCover)
+          .find($worksItemCover)
           .stop(true, false)
           .removeClass("is-slideUp");
       }, 300);
@@ -116,8 +118,9 @@ jQuery(document).ready(function ($) {
 
 jQuery(function($) {
   let noiseInterval;
+  const $contactNoise = $('.js-contact-noise');
 
-  $('.js-contact-noise').hover(
+  $contactNoise.hover(
     function() {
       const $container = $(this).closest('.js-contact-container');
       const $title = $(this).find('.js-scroll-title');
