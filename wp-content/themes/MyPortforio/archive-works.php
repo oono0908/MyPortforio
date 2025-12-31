@@ -4,19 +4,19 @@
   <section class="works">
     <div class="works__container">
       <div class="works__top">
-        <h1 class="works__title">WORKS</h1>
+        <h1 class="works__title js-scroll-title">WORKS</h1>
       </div>
-      <div class="works__main">
-        <div class="works__main-inner">
+      <div class="works__main js-horizontal-scroll-container">
+        <div class="works__main-inner js-scroll-detect">
           <ul class="works__items">
           <div class="works__items-title">
               My Portfolio<br>Works
             </div>
-            <li class="works__item works__item-dammy">
+            <li class="works__item works__item-dammy js-horizontal-scroll-item">
             </li>
             <?php if (have_posts()) : ?>
               <?php while (have_posts()) : the_post(); ?>
-                <li class="works__item">
+                <li class="works__item js-horizontal-scroll-item">
                   <a class="works__item-link" href="<?php the_permalink(); ?>">  
                     <div class="works__item-image-wrapper">
                       <img class="works__item-image" src="<?php echo esc_url(get_field('image')); ?>" alt="<?php the_title(); ?>">

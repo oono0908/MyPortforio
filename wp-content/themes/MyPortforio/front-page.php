@@ -5,7 +5,7 @@
   <div class="mv">
     <div class="mv__title">
       <span
-        class="txt-rotate"
+        class="txt-rotate js-txt-rotate"
         data-period="1000"
         data-rotate='[ "I am Shinichiro Ono.","This web site is my portfolio site.", "Have fun.", "Thank you for visiting." ]'>
       </span>
@@ -18,7 +18,7 @@
       <h2 class="works__title">Works</h2>
 
       <!-- Swiper -->
-      <div class="swiper">
+      <div class="swiper js-swiper">
         <div class="swiper-wrapper">
           <?php
           $args = array(
@@ -31,9 +31,9 @@
             $image = get_field('image');
           ?>
             <ul class="swiper-slide">
-              <li class="works__item">
+              <li class="works__item js-works-item-hover">
                 <a href="<?php the_permalink(); ?>" class="works__item-link">
-                  <div class="work__item-cover">
+                  <div class="work__item-cover js-works-item-cover">
                     <div class="work__item-title"><?php the_title(); ?></div>
                   </div>
                     <?php if ($image) : ?>
@@ -51,7 +51,7 @@
       </a>
     </div>
     <span
-        class="txt-rotate works__button-text"
+        class="txt-rotate works__button-text js-txt-rotate"
         data-period="1000"
         data-rotate='[ "View ALL" ]'>
    </span>
@@ -73,7 +73,7 @@
         ?>
           <li class="blog__item">
             <a href="<?php the_permalink(); ?>" class="blog__item-link" aria-label="<?php the_title(); ?>へ移動">
-              <div class="blog__item-inner">
+              <div class="blog__item-inner js-blog-item-hover">
                   <div class="blog__item-image">
                     <?php if ($image) : ?>
                       <img src="<?php echo esc_url($image); ?>" class="blog__item-image" alt="<?php the_title(); ?>">
@@ -91,15 +91,15 @@
       </a>
     </div>
     <span
-        class="txt-rotate blog__button-text"
+        class="txt-rotate blog__button-text js-txt-rotate"
         data-period="1000"
         data-rotate='[ "View ALL" ]'>
    </span>
   </section>
   <section class="contact">
-    <div class="contact__container">
-      <a href="<?php echo home_url('/contact'); ?>" class="contact__link" aria-label="お問い合わせへ移動">
-        <div class="contact__title">Contact Me</div>
+    <div class="contact__container js-contact-container">
+      <a href="<?php echo home_url('/contact'); ?>" class="contact__link js-contact-noise" aria-label="お問い合わせへ移動">
+        <div class="contact__title js-scroll-title">Contact Me</div>
       </a>
     </div>
   </section>

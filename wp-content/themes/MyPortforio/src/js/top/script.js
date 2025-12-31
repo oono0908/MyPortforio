@@ -1,5 +1,5 @@
 jQuery(function ($) {
-  const swiper = new Swiper(".swiper", {
+  const swiper = new Swiper(".js-swiper", {
     loop: true, // ループを有効にする
     speed: 6000, // アニメーション速度（ミリ秒）
     allowTouchMove: false, // タッチ操作を無効にする（任意）
@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
   };
 
   // 初期化
-  $(".txt-rotate").each(function () {
+  $(".js-txt-rotate").each(function () {
     var $this = $(this);
     var toRotate = $this.attr("data-rotate");
     var period = $this.attr("data-period");
@@ -81,7 +81,7 @@ jQuery(document).ready(function ($) {
 });
 
 jQuery(document).ready(function ($) {
-  $(".blog__item-inner")
+  $(".js-blog-item-hover")
     .stop(true, false)
     .hover(
       function (e) {
@@ -96,8 +96,8 @@ jQuery(document).ready(function ($) {
 });
 
 jQuery(document).ready(function ($) {
-  let worksItem = $(".works__item");
-  let worksItemCover = $(".work__item-cover");
+  let worksItem = $(".js-works-item-hover");
+  let worksItemCover = $(".js-works-item-cover");
   worksItem.hover(
     function (e) {
       $(this).find(worksItemCover).stop(true, false).addClass("is-slideUp");
@@ -116,12 +116,12 @@ jQuery(document).ready(function ($) {
 
 jQuery(function($) {
   let noiseInterval;
-  
-  $('.contact__link').hover(
+
+  $('.js-contact-noise').hover(
     function() {
-      const $container = $(this).closest('.contact__container');
-      const $title = $(this).find('.contact__title');
-      
+      const $container = $(this).closest('.js-contact-container');
+      const $title = $(this).find('.js-scroll-title');
+
       // ホバー時にborder-radiusを0に
       $container.css('border-radius', '0');
       
@@ -157,8 +157,8 @@ jQuery(function($) {
       $container.data('noiseInterval', noiseInterval);
     },
     function() {
-      const $container = $(this).closest('.contact__container');
-      const $title = $(this).find('.contact__title');
+      const $container = $(this).closest('.js-contact-container');
+      const $title = $(this).find('.js-scroll-title');
       
       // インターバルをクリア
       clearInterval($container.data('noiseInterval'));

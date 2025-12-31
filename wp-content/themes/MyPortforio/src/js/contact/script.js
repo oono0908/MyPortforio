@@ -4,7 +4,7 @@
 jQuery(function ($) {
   // スクロールタイトルアニメーションモジュールを初期化
   if (typeof ScrollTitleAnimation !== "undefined") {
-    ScrollTitleAnimation.init(".contact__title");
+    ScrollTitleAnimation.init(".js-scroll-title");
   }
 });
 

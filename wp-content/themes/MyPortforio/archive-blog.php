@@ -4,7 +4,7 @@
   <section class="blog">
     <div class="blog__container">
       <div class="blog__top">
-        <h1 class="blog__title">BLOG</h1>
+        <h1 class="blog__title js-scroll-title">BLOG</h1>
       </div>
       <div class="blog__main">
         <div class="blog__main-inner">

@@ -4,7 +4,7 @@
 jQuery(function ($) {
   // スクロールタイトルアニメーションモジュールを初期化
   if (typeof ScrollTitleAnimation !== "undefined") {
-    ScrollTitleAnimation.init(".works__title");
+    ScrollTitleAnimation.init(".js-scroll-title");
   }
 });
 
@@ -12,8 +12,8 @@ jQuery(function ($) {
 // Worksページの横スクロールアニメーション
 // ===================================
 jQuery(document).ready(function ($) {
-  $(".works__main-inner").on("scroll", function () {
-    $(".works__item").each(function () {
+  $(".js-scroll-detect").on("scroll", function () {
+    $(".js-horizontal-scroll-item").each(function () {
       if ($(this).offset().left <= $(window).scrollLeft() + 250) {
         $(this).stop(true, false).addClass("is-active");
       } else {
@@ -25,8 +25,8 @@ jQuery(document).ready(function ($) {
 });
 
 jQuery(function ($) {
-  const container = $(".works__main");
-  const slides = $(".works__item");
+  const container = $(".js-horizontal-scroll-container");
+  const slides = $(".js-horizontal-scroll-item");
   const containerWidth = container.width();
   
   // スマホ判定（768px以下をスマホとする場合）

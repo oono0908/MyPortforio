@@ -4,7 +4,7 @@
   <section class="contact">
   <div class="contact__container">
       <div class="contact__top">
-        <h1 class="contact__title">CONTACT</h1>
+        <h1 class="contact__title js-scroll-title">CONTACT</h1>
       </div>
       <div class="contact__main">
         <div class="contact__main-inner">

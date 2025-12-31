@@ -4,7 +4,7 @@
   <section class="about">
     <div class="about__container">
       <div class="about__top">
-        <h1 class="about__title">ABOUT</h1>
+        <h1 class="about__title js-scroll-title">ABOUT</h1>
       </div>
       <div class="about__main">
         <div class="about__main-inner">
