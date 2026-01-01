@@ -7,5 +7,3 @@ jQuery(function ($) {
     ScrollTitleAnimation.init(".js-scroll-title");
   }
 });
-
-

@@ -24,10 +24,11 @@
               </div>
               <div class="about__item-content">
                 <div class="about__item-content-ja">
+                  1991年生まれ。TOEIC 900点。英検準1級。保健体育教諭免許(中、高)。<br>
                   山口県にてwebコーダーをしております。<br>
-                  web制作会社勤務時は、webデザイナー、webディレクター、バックエンドエンジニアと共同し、数十ページの小規模、中規模の企業サイトから百数ページの大規模ショッピングサイトの制作をしていました。<br>
+                  web制作会社勤務時は、webデザイナー、webディレクター、バックエンドエンジニアと共同し、数十ページの小規模、中規模の企業サイトから百数十ページの大規模ショッピングサイトの制作をしていました。<br>
                   HTML,&thinsp;CSS,&thinsp;JavaScript,&thinsp;jQuery,&thinsp;PHP,&thinsp;WordPress,&thinsp;SEO対策など幅広い経験を持っています。<br>
-                  現在は、Wordpressサイトでのオリジナルテーマ開発を中心に、フロントエンドを中心に活動しております。<br>
+                  現在は、Wordpressサイトでのオリジナルテーマ開発を中心に、フロントエンドエンジニアとして活動しています。<br>
                 </div>
                 <div class="about__item-content-en">
                   I am working in Yamaguchi Prefecture in Japan as a web coder.<br>  

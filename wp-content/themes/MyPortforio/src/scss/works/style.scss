@@ -58,7 +58,7 @@
   overflow: hidden;
   background-color: white;
   @include mq(md) {
-    padding: 30px 15px;
+    padding: 60px 15px;
   }
 }
 
@@ -104,11 +104,11 @@
   cursor: pointer;
   border: 2px solid $black;
   border-radius: 10px;
-  @include mq(md) {
-    width: 80vw;
-  }
   @include mq(lg) {
     width: 60vw;
+  }
+  @include mq(md) {
+    width: 80vw;
   }
 }
 

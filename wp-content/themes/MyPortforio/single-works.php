@@ -26,6 +26,18 @@
           <div class="item__title">URL</div>
           <a class="item__url" href="<?php the_field('url'); ?>" target="_blank" aria-label="作品ページへ移動"> <?php the_field('url'); ?></a>
         </li>
+        <li class="works-single__item item">
+          <div class="item__title">GitHub</div>
+          <a class="item__url" href="<?php the_field('github-url'); ?>" target="_blank" aria-label="GitHubへ移動"> <?php the_field('github-url'); ?></a>
+        </li>
+        <li class="works-single__item item">
+          <div class="item__title">Core Web Vitals</div>
+          <?php if (get_field('image-cwv')) : ?>
+            <img class="works-single__image-cwv" src="<?php echo esc_url(get_field('image-cwv')); ?>" alt="<?php the_title(); ?>">
+          <?php else : ?>
+            <div class="item__content"> No data</div>
+          <?php endif; ?>
+        </li>
       </ul>
       
       <div class="works-single__other-works">

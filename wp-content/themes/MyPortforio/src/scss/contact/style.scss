@@ -52,9 +52,9 @@
   .contact__main-inner {
     max-width: 800px;
     margin: 0 auto;
-    padding: 100px 35px;
+    padding: 200px 35px;
     @include mq(md) {
-      padding: 60px 15px;
+      padding: 120px 15px;
     }
   }
 

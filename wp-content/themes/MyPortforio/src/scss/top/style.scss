@@ -5,6 +5,9 @@
 @import "../abstracts/mixins";
 @import "../abstracts/responsive";
 
+.header {
+  position: fixed;
+}
 // Top page specific styles
 .mv {
   height: 100vh;
@@ -242,7 +245,7 @@
   font-weight: $regular;
   color: $black;
   letter-spacing: 0.1em;
-  text-align: center;
+  text-align: left;
 }
 
 .blog__button {

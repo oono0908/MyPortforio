@@ -20,6 +20,10 @@ jQuery(function ($) {
   });
 });
 
+// ===================================
+// Topページのテキストローテーション
+// ===================================
+
 jQuery(document).ready(function ($) {
   const TxtRotate = function (el, toRotate, period) {
     this.toRotate = toRotate;
@@ -96,6 +100,10 @@ jQuery(document).ready(function ($) {
     );
 });
 
+// ===================================
+// Topページのワークスアイテムホバー
+// ===================================
+
 jQuery(document).ready(function ($) {
   const $worksItem = $(".js-works-item-hover");
   const $worksItemCover = $(".js-works-item-cover");
@@ -115,6 +123,9 @@ jQuery(document).ready(function ($) {
   );
 });
 
+// ===================================
+// Topページのお問い合わせノイズ
+// ===================================
 
 jQuery(function($) {
   let noiseInterval;
